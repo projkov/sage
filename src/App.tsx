@@ -7,6 +7,7 @@ import { ResourceContent } from './components/ResourceContent';
 import { Content, Footer, Header } from 'antd/es/layout/layout';
 import Search from 'antd/es/input/Search';
 import { useState } from 'react';
+import logo from './assets/logo.png';
 
 export interface UIConfigTableItemInterface {
   key: string;
@@ -36,11 +37,12 @@ function App() {
   };
 
   const headerStyle: React.CSSProperties = {
-    textAlign: 'center',
-    color: '#fff',
-    height: 64,
-    paddingInline: 48,
-    lineHeight: '64px',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: '16px',
+    justifyItems: 'center',
+    alignItems: 'center',
     backgroundColor: '#4096ff',
   };
 
@@ -48,7 +50,7 @@ function App() {
     textAlign: 'center',
     lineHeight: '120px',
     color: '#fff',
-    backgroundColor: 'gray',
+    backgroundColor: '#f1f1f1',
     padding: '32px'
   };
 
@@ -61,6 +63,7 @@ function App() {
   return (
     <Layout style={layoutStyle}>
       <Header style={headerStyle}>
+        <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '8px' }}/>
         <Search
           placeholder="input search text"
           allowClear
@@ -83,7 +86,7 @@ function App() {
           />
         </div>
       </Content>
-      <Footer style={footerStyle}>Footer</Footer>
+      <Footer style={footerStyle}>Developed by Pavel Rozhkov</Footer>
     </Layout>
 
   );
