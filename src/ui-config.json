@@ -72,6 +72,126 @@
                     }
                 ]
             }
+        },
+        {
+            "resourceType": "AllergyIntolerance",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "AllergyIntolerance.id"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Condition",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Condition.id"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Encounter",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Encounter.id"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Immunization",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Immunization.id"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "MedicationRequest",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "MedicationRequest.id"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Procedure",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Procedure.id"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Location",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Location.id"
+                    }
+                ]
+            }
+        },
+{
+            "resourceType": "Organization",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Organization.id"
+                    }
+                ]
+            }
+        },
+{
+            "resourceType": "Practitioner",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Practitioner.id"
+                    }
+                ]
+            }
+        },
+{
+            "resourceType": "PractitionerRole",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "PractitionerRole.id"
+                    }
+                ]
+            }
         }
     ]
 }
