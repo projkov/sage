@@ -7,11 +7,12 @@ import { UIConfigResourceInterface } from "../../App";
 interface ResourceContentProps {
     resourceType: string;
     resourceConfig: UIConfigResourceInterface;
+    serverUrl: string;
 }
 
 export function ResourceContent(props: ResourceContentProps) {
-    const { resourceType, resourceConfig } = props;
-    const { response } = useResourceInfo(resourceType)
+    const { resourceType, resourceConfig, serverUrl} = props;
+    const { response } = useResourceInfo(resourceType, serverUrl)
 
     return (
         <RenderRemoteData remoteData={response}>
