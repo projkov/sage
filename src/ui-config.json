@@ -1,0 +1,77 @@
+{
+    "resources": [
+        {
+            "resourceType": "Patient",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Patient.id"
+                    },
+                    {
+                        "key": "identifier",
+                        "title": "Identifier",
+                        "expression": "Patient.identifier.value"
+                    },
+                    {
+                        "key": "family",
+                        "title": "Family",
+                        "expression": "Patient.name.family"
+                    },
+                    {
+                        "key": "given",
+                        "title": "Given",
+                        "expression": "Patient.name.given"
+                    },
+                    {
+                        "key": "telecom",
+                        "title": "Telecom",
+                        "expression": "Patient.telecom.value"
+                    },
+                    {
+                        "key": "gender",
+                        "title": "Gender",
+                        "expression": "Patient.gender"
+                    },
+                    {
+                        "key": "birthDate",
+                        "title": "Birth Date",
+                        "expression": "Patient.birthDate"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Patient.id"
+                    },
+                    {
+                        "key": "gender",
+                        "title": "Gender",
+                        "expression": "Patient.gender"
+                    }
+                ]
+            }
+        },
+        {
+            "resourceType": "Observation",
+            "table": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Observation.id"
+                    },
+                    {
+                        "key": "identifier",
+                        "title": "Identifier",
+                        "expression": "Observation.identifier.value"
+                    }
+                ]
+            }
+        }
+    ]
+}
