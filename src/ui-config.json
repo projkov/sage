@@ -49,9 +49,34 @@
                         "expression": "Patient.id"
                     },
                     {
+                        "key": "identifier",
+                        "title": "Identifier",
+                        "expression": "Patient.identifier.value"
+                    },
+                    {
+                        "key": "family",
+                        "title": "Family",
+                        "expression": "Patient.name.family"
+                    },
+                    {
+                        "key": "given",
+                        "title": "Given",
+                        "expression": "Patient.name.given"
+                    },
+                    {
+                        "key": "telecom",
+                        "title": "Telecom",
+                        "expression": "Patient.telecom.value"
+                    },
+                    {
                         "key": "gender",
                         "title": "Gender",
                         "expression": "Patient.gender"
+                    },
+                    {
+                        "key": "birthDate",
+                        "title": "Birth Date",
+                        "expression": "Patient.birthDate"
                     }
                 ]
             }

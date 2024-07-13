@@ -7,7 +7,7 @@ const fhirpath = require('fhirpath');
 const fhirpath_r4_model = require('fhirpath/fhir-context/r4');
 
 
-function prepareData(bundle: Bundle, tableConfig: UIConfigTableItemInterface[]) {
+function prepareData(bundle: Bundle, tableConfig: UIConfigTableItemInterface[], detailsConfig: UIConfigTableItemInterface[]) {
     return bundle.entry?.map((entry, index) => {
         let resultObj: { [key: string]: any } = {};
         tableConfig.forEach((tableItem) => {
@@ -16,6 +16,7 @@ function prepareData(bundle: Bundle, tableConfig: UIConfigTableItemInterface[]) 
         })
         resultObj['key'] = index
         resultObj['resource'] = entry.resource
+        resultObj['detailsConfig'] = detailsConfig
 
         return resultObj
     })
@@ -27,16 +28,16 @@ function prepareTableColumns(tableConfig: UIConfigTableItemInterface[]) {
             title: tableItem.title,
             dataIndex: tableItem.key,
             key: tableItem.key,
-            render: (data: any, item: any) => index !== 0 ? <>{data}</> : <ResourceDetails buttonText={data} resource={item.resource!}/>
+            render: (data: any, item: any) => index !== 0 ? <>{data}</> : <ResourceDetails buttonText={data} resource={item.resource!} detailsConfig={item.detailsConfig!}/>
         }
     })
 }
 
-export function ResourceTable({ bundle, tableConfig }: { bundle: Bundle, tableConfig: UIConfigTableItemInterface[] }) {
+export function ResourceTable({ bundle, tableConfig, detailsConfig }: { bundle: Bundle, tableConfig: UIConfigTableItemInterface[], detailsConfig: UIConfigTableItemInterface[] }) {
     return (
         <Table
             columns={prepareTableColumns(tableConfig)}
-            dataSource={prepareData(bundle, tableConfig)}
+            dataSource={prepareData(bundle, tableConfig, detailsConfig)}
         />
     );
 }

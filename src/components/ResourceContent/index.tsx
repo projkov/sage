@@ -20,6 +20,7 @@ export function ResourceContent(props: ResourceContentProps) {
                 <ResourceTable
                     bundle={bundle as Bundle<FhirResource>}
                     tableConfig={resourceConfig.table.items}
+                    detailsConfig={resourceConfig.details.items}
                 />
             )}
         </RenderRemoteData>

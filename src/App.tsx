@@ -20,7 +20,9 @@ export interface UIConfigResourceInterface {
   table: {
     items: UIConfigTableItemInterface[];
   };
-
+  details: {
+    items: UIConfigTableItemInterface[];
+  };
 }
 export interface UIConfigInterface {
   resources: UIConfigResourceInterface[]
