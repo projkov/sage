@@ -10,34 +10,19 @@
                         "expression": "Patient.id"
                     },
                     {
-                        "key": "identifier",
-                        "title": "Identifier",
-                        "expression": "Patient.identifier.value"
-                    },
-                    {
-                        "key": "family",
-                        "title": "Family",
-                        "expression": "Patient.name.family"
-                    },
-                    {
-                        "key": "given",
-                        "title": "Given",
-                        "expression": "Patient.name.given"
-                    },
-                    {
-                        "key": "telecom",
-                        "title": "Telecom",
-                        "expression": "Patient.telecom.value"
-                    },
-                    {
-                        "key": "gender",
-                        "title": "Gender",
-                        "expression": "Patient.gender"
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Patient.name[0].text"
                     },
                     {
                         "key": "birthDate",
                         "title": "Birth Date",
                         "expression": "Patient.birthDate"
+                    },
+                    {
+                        "key": "gender",
+                        "title": "Gender",
+                        "expression": "Patient.gender"
                     }
                 ]
             },
@@ -49,24 +34,14 @@
                         "expression": "Patient.id"
                     },
                     {
-                        "key": "identifier",
-                        "title": "Identifier",
-                        "expression": "Patient.identifier.value"
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Patient.name[0].text"
                     },
                     {
-                        "key": "family",
-                        "title": "Family",
-                        "expression": "Patient.name.family"
-                    },
-                    {
-                        "key": "given",
-                        "title": "Given",
-                        "expression": "Patient.name.given"
-                    },
-                    {
-                        "key": "telecom",
-                        "title": "Telecom",
-                        "expression": "Patient.telecom.value"
+                        "key": "birthDate",
+                        "title": "Birth Date",
+                        "expression": "Patient.birthDate"
                     },
                     {
                         "key": "gender",
@@ -74,9 +49,14 @@
                         "expression": "Patient.gender"
                     },
                     {
-                        "key": "birthDate",
-                        "title": "Birth Date",
-                        "expression": "Patient.birthDate"
+                        "key": "address",
+                        "title": "Address",
+                        "expression": "Patient.address[0].text"
+                    },
+                    {
+                        "key": "telecom",
+                        "title": "Contact",
+                        "expression": "Patient.telecom[0].value"
                     }
                 ]
             }
@@ -91,9 +71,53 @@
                         "expression": "Observation.id"
                     },
                     {
-                        "key": "identifier",
-                        "title": "Identifier",
-                        "expression": "Observation.identifier.value"
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Observation.status"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "Observation.code.text"
+                    },
+                    {
+                        "key": "value",
+                        "title": "Value",
+                        "expression": "Observation.valueQuantity.value"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Observation.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Observation.status"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "Observation.code.text"
+                    },
+                    {
+                        "key": "value",
+                        "title": "Value",
+                        "expression": "Observation.valueQuantity.value"
+                    },
+                    {
+                        "key": "effectiveDateTime",
+                        "title": "Effective Date",
+                        "expression": "Observation.effectiveDateTime"
+                    },
+                    {
+                        "key": "subject",
+                        "title": "Subject",
+                        "expression": "Observation.subject.reference"
                     }
                 ]
             }
@@ -106,6 +130,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "AllergyIntolerance.id"
+                    },
+                    {
+                        "key": "clinicalStatus",
+                        "title": "Clinical Status",
+                        "expression": "AllergyIntolerance.clinicalStatus.coding[0].display"
+                    },
+                    {
+                        "key": "verificationStatus",
+                        "title": "Verification Status",
+                        "expression": "AllergyIntolerance.verificationStatus.coding[0].display"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "AllergyIntolerance.type"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "AllergyIntolerance.id"
+                    },
+                    {
+                        "key": "clinicalStatus",
+                        "title": "Clinical Status",
+                        "expression": "AllergyIntolerance.clinicalStatus.coding[0].display"
+                    },
+                    {
+                        "key": "verificationStatus",
+                        "title": "Verification Status",
+                        "expression": "AllergyIntolerance.verificationStatus.coding[0].display"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "AllergyIntolerance.type"
+                    },
+                    {
+                        "key": "category",
+                        "title": "Category",
+                        "expression": "AllergyIntolerance.category[0]"
+                    },
+                    {
+                        "key": "criticality",
+                        "title": "Criticality",
+                        "expression": "AllergyIntolerance.criticality"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "AllergyIntolerance.code.coding[0].display"
                     }
                 ]
             }
@@ -118,6 +196,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "Condition.id"
+                    },
+                    {
+                        "key": "clinicalStatus",
+                        "title": "Clinical Status",
+                        "expression": "Condition.clinicalStatus.coding[0].display"
+                    },
+                    {
+                        "key": "verificationStatus",
+                        "title": "Verification Status",
+                        "expression": "Condition.verificationStatus.coding[0].display"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "Condition.code.coding[0].display"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Condition.id"
+                    },
+                    {
+                        "key": "clinicalStatus",
+                        "title": "Clinical Status",
+                        "expression": "Condition.clinicalStatus.coding[0].display"
+                    },
+                    {
+                        "key": "verificationStatus",
+                        "title": "Verification Status",
+                        "expression": "Condition.verificationStatus.coding[0].display"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "Condition.code.coding[0].display"
+                    },
+                    {
+                        "key": "category",
+                        "title": "Category",
+                        "expression": "Condition.category[0].coding[0].display"
+                    },
+                    {
+                        "key": "severity",
+                        "title": "Severity",
+                        "expression": "Condition.severity.coding[0].display"
+                    },
+                    {
+                        "key": "onsetDateTime",
+                        "title": "Onset Date",
+                        "expression": "Condition.onsetDateTime"
                     }
                 ]
             }
@@ -130,6 +262,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "Encounter.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Encounter.status"
+                    },
+                    {
+                        "key": "class",
+                        "title": "Class",
+                        "expression": "Encounter.class.display"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "Encounter.type[0].coding[0].display"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Encounter.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Encounter.status"
+                    },
+                    {
+                        "key": "class",
+                        "title": "Class",
+                        "expression": "Encounter.class.display"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "Encounter.type[0].coding[0].display"
+                    },
+                    {
+                        "key": "subject",
+                        "title": "Subject",
+                        "expression": "Encounter.subject.reference"
+                    },
+                    {
+                        "key": "participant",
+                        "title": "Participant",
+                        "expression": "Encounter.participant[0].individual.reference"
+                    },
+                    {
+                        "key": "period",
+                        "title": "Period",
+                        "expression": "Encounter.period.start"
                     }
                 ]
             }
@@ -142,6 +328,55 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "Immunization.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Immunization.status"
+                    },
+                    {
+                        "key": "vaccineCode",
+                        "title": "Vaccine Code",
+                        "expression": "Immunization.vaccineCode.coding[0].display"
+                    },
+                    {
+                        "key": "date",
+                        "title": "Date",
+                        "expression": "Immunization.occurrenceDateTime"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Immunization.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Immunization.status"
+                    },
+                    {
+                        "key": "vaccineCode",
+                        "title": "Vaccine Code",
+                        "expression": "Immunization.vaccineCode.coding[0].display"
+                    },
+                    {
+                        "key": "date",
+                        "title": "Date",
+                        "expression": "Immunization.occurrenceDateTime"
+                    },
+                    {
+                        "key": "patient",
+                        "title": "Patient",
+                        "expression": "Immunization.patient.reference"
+                    },
+                    {
+                        "key": "performer",
+                        "title": "Performer",
+                        "expression": "Immunization.performer[0].actor.reference"
                     }
                 ]
             }
@@ -154,6 +389,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "MedicationRequest.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "MedicationRequest.status"
+                    },
+                    {
+                        "key": "intent",
+                        "title": "Intent",
+                        "expression": "MedicationRequest.intent"
+                    },
+                    {
+                        "key": "medicationCodeableConcept",
+                        "title": "Medication",
+                        "expression": "MedicationRequest.medicationCodeableConcept.coding[0].display"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "MedicationRequest.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "MedicationRequest.status"
+                    },
+                    {
+                        "key": "intent",
+                        "title": "Intent",
+                        "expression": "MedicationRequest.intent"
+                    },
+                    {
+                        "key": "medicationCodeableConcept",
+                        "title": "Medication",
+                        "expression": "MedicationRequest.medicationCodeableConcept.coding[0].display"
+                    },
+                    {
+                        "key": "subject",
+                        "title": "Subject",
+                        "expression": "MedicationRequest.subject.reference"
+                    },
+                    {
+                        "key": "authoredOn",
+                        "title": "Authored On",
+                        "expression": "MedicationRequest.authoredOn"
+                    },
+                    {
+                        "key": "requester",
+                        "title": "Requester",
+                        "expression": "MedicationRequest.requester.reference"
                     }
                 ]
             }
@@ -166,6 +455,55 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "Procedure.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Procedure.status"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "Procedure.code.coding[0].display"
+                    },
+                    {
+                        "key": "subject",
+                        "title": "Subject",
+                        "expression": "Procedure.subject.reference"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Procedure.id"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Procedure.status"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "Procedure.code.coding[0].display"
+                    },
+                    {
+                        "key": "subject",
+                        "title": "Subject",
+                        "expression": "Procedure.subject.reference"
+                    },
+                    {
+                        "key": "performedDateTime",
+                        "title": "Performed Date",
+                        "expression": "Procedure.performedDateTime"
+                    },
+                    {
+                        "key": "performer",
+                        "title": "Performer",
+                        "expression": "Procedure.performer[0].actor.reference"
                     }
                 ]
             }
@@ -178,11 +516,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "Location.id"
+                    },
+                    {
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Location.name"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Location.status"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "Location.type[0].coding[0].display"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Location.id"
+                    },
+                    {
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Location.name"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Location.status"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "Location.type[0].coding[0].display"
+                    },
+                    {
+                        "key": "address",
+                        "title": "Address",
+                        "expression": "Location.address.text"
+                    },
+                    {
+                        "key": "position",
+                        "title": "Position",
+                        "expression": "Location.position.longitude + ', ' + Location.position.latitude"
                     }
                 ]
             }
         },
-{
+        {
             "resourceType": "Organization",
             "table": {
                 "items": [
@@ -190,11 +577,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "Organization.id"
+                    },
+                    {
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Organization.name"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "Organization.type[0].coding[0].display"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Organization.active"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Organization.id"
+                    },
+                    {
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Organization.name"
+                    },
+                    {
+                        "key": "type",
+                        "title": "Type",
+                        "expression": "Organization.type[0].coding[0].display"
+                    },
+                    {
+                        "key": "status",
+                        "title": "Status",
+                        "expression": "Organization.active"
+                    },
+                    {
+                        "key": "address",
+                        "title": "Address",
+                        "expression": "Organization.address[0].text"
+                    },
+                    {
+                        "key": "telecom",
+                        "title": "Contact",
+                        "expression": "Organization.telecom[0].value"
                     }
                 ]
             }
         },
-{
+        {
             "resourceType": "Practitioner",
             "table": {
                 "items": [
@@ -202,11 +638,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "Practitioner.id"
+                    },
+                    {
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Practitioner.name[0].text"
+                    },
+                    {
+                        "key": "gender",
+                        "title": "Gender",
+                        "expression": "Practitioner.gender"
+                    },
+                    {
+                        "key": "qualification",
+                        "title": "Qualification",
+                        "expression": "Practitioner.qualification[0].code.coding[0].display"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "Practitioner.id"
+                    },
+                    {
+                        "key": "name",
+                        "title": "Name",
+                        "expression": "Practitioner.name[0].text"
+                    },
+                    {
+                        "key": "gender",
+                        "title": "Gender",
+                        "expression": "Practitioner.gender"
+                    },
+                    {
+                        "key": "qualification",
+                        "title": "Qualification",
+                        "expression": "Practitioner.qualification[0].code.coding[0].display"
+                    },
+                    {
+                        "key": "telecom",
+                        "title": "Contact",
+                        "expression": "Practitioner.telecom[0].value"
+                    },
+                    {
+                        "key": "address",
+                        "title": "Address",
+                        "expression": "Practitioner.address[0].text"
                     }
                 ]
             }
         },
-{
+        {
             "resourceType": "PractitionerRole",
             "table": {
                 "items": [
@@ -214,6 +699,60 @@
                         "key": "id",
                         "title": "ID",
                         "expression": "PractitionerRole.id"
+                    },
+                    {
+                        "key": "practitioner",
+                        "title": "Practitioner",
+                        "expression": "PractitionerRole.practitioner.reference"
+                    },
+                    {
+                        "key": "organization",
+                        "title": "Organization",
+                        "expression": "PractitionerRole.organization.reference"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "PractitionerRole.code[0].coding[0].display"
+                    }
+                ]
+            },
+            "details": {
+                "items": [
+                    {
+                        "key": "id",
+                        "title": "ID",
+                        "expression": "PractitionerRole.id"
+                    },
+                    {
+                        "key": "practitioner",
+                        "title": "Practitioner",
+                        "expression": "PractitionerRole.practitioner.reference"
+                    },
+                    {
+                        "key": "organization",
+                        "title": "Organization",
+                        "expression": "PractitionerRole.organization.reference"
+                    },
+                    {
+                        "key": "code",
+                        "title": "Code",
+                        "expression": "PractitionerRole.code[0].coding[0].display"
+                    },
+                    {
+                        "key": "specialty",
+                        "title": "Specialty",
+                        "expression": "PractitionerRole.specialty[0].coding[0].display"
+                    },
+                    {
+                        "key": "telecom",
+                        "title": "Contact",
+                        "expression": "PractitionerRole.telecom[0].value"
+                    },
+                    {
+                        "key": "period",
+                        "title": "Period",
+                        "expression": "PractitionerRole.period.start"
                     }
                 ]
             }
