@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import { Tabs } from 'antd';
+
+import jsonData from './ui-config.json'
+import { ResourceContent } from './components/ResourceContent';
+
+export interface UIConfigTableItemInterface {
+  key: string;
+  title: string;
+  expression: string;
+}
+
+export interface UIConfigResourceInterface {
+  resourceType: string;
+  table: {
+    items: UIConfigTableItemInterface[];
+  };
+
+}
+export interface UIConfigInterface {
+  resources: UIConfigResourceInterface[]
+}
+
 function App() {
+  const configData = jsonData as UIConfigInterface;
+  const configItems = configData.resources
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs
+        tabPosition={'left'}
+        items={configItems.map((item) => {
+          return {
+            label: item.resourceType,
+            key: item.resourceType,
+            children: <ResourceContent resourceType={item.resourceType} resourceConfig={item} />,
+          };
+        })}
+      />
     </div>
   );
 }
