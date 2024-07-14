@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Button, Layout, Tabs } from 'antd';
+import { Layout, Tabs } from 'antd';
 
 import jsonData from './ui-config.json'
 import { ResourceContent } from './components/ResourceContent';
@@ -70,9 +70,9 @@ function App() {
       <Header style={headerStyle}>
         <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '8px' }} />
         <Search
-          placeholder="input search text"
+          placeholder="Write FHIR server URL to connect"
           allowClear
-          enterButton="Set"
+          enterButton="Connect"
           size="large"
           onSearch={(e) => setServerUrl(e)}
         />
