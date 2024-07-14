@@ -32,7 +32,67 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.layout {
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 16px;
+  justify-items: center;
+  align-items: center;
+  background-color: #4096ff;
+}
+
+.content {
+  text-align: center;
+  line-height: 120px;
+  color: #fff;
+  background-color: #f1f1f1;
+  padding: 32px;
+}
+
+.content-child {
+  background-color: #FFF;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.footer {
+  color: #fff;
+  background-color: #4096ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.footer-text-block {
+  align-content: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.footer-icon {
+  font-size: 25px;
+  color: #FFF;
 }

@@ -34,41 +34,10 @@ function App() {
   const configData = jsonData as UIConfigInterface;
   const configItems = configData.resources
 
-  const layoutStyle: React.CSSProperties = {
-    width: '100%',
-    height: '100vh'
-  };
-
-  const headerStyle: React.CSSProperties = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: '16px',
-    justifyItems: 'center',
-    alignItems: 'center',
-    backgroundColor: '#4096ff',
-  };
-
-  const contentStyle: React.CSSProperties = {
-    textAlign: 'center',
-    lineHeight: '120px',
-    color: '#fff',
-    backgroundColor: '#f1f1f1',
-    padding: '32px'
-  };
-
-  const footerStyle: React.CSSProperties = {
-    color: '#fff',
-    backgroundColor: '#4096ff',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  };
-
   return (
-    <Layout style={layoutStyle}>
-      <Header style={headerStyle}>
-        <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '8px' }} />
+    <Layout className='layout'>
+      <Header className='header'>
+        <img src={logo} alt="Logo" className='logo'/>
         <Search
           placeholder="Write FHIR server URL to connect"
           allowClear
@@ -77,8 +46,8 @@ function App() {
           onSearch={(e) => setServerUrl(e)}
         />
       </Header>
-      <Content style={contentStyle}>
-        <div style={{ backgroundColor: 'white', borderRadius: '8px', padding: '32px' }}>
+      <Content className='content'>
+        <div className='content-child'>
           <Tabs
             tabPosition={'left'}
             items={configItems.map((item) => {
@@ -91,12 +60,12 @@ function App() {
           />
         </div>
       </Content>
-      <Footer style={footerStyle}>
-        <div style={{ alignContent: 'center' }}><b>Sage UI</b> is FHIR resource viewer</div>
-        <div style={{ alignContent: 'center' }}>Developed by <b>Pavel Rozhkov</b>, 2024</div>
-        <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>
-          <a href="https://github.com/projkov/sage" target='_blank' rel="noopener noreferrer"><GithubOutlined style={{ fontSize: '25px', color: '#FFF' }}/></a>
-          <a href="https://www.linkedin.com/in/pavelrozhkov" target='_blank' rel="noopener noreferrer"><LinkedinOutlined style={{ fontSize: '25px', color: '#FFF' }}/></a>
+      <Footer className='footer'>
+        <div className='footer-text-block'><b>Sage UI</b> is FHIR resource viewer</div>
+        <div className='footer-text-block'>Developed by <b>Pavel Rozhkov</b>, 2024</div>
+        <div className='footer-links'>
+          <a href="https://github.com/projkov/sage" target='_blank' rel="noopener noreferrer"><GithubOutlined className="footer-icon"/></a>
+          <a href="https://www.linkedin.com/in/pavelrozhkov" target='_blank' rel="noopener noreferrer"><LinkedinOutlined className="footer-icon"/></a>
         </div>
       </Footer>
     </Layout>
