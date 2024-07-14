@@ -2,13 +2,7 @@ import { RenderRemoteData } from "@beda.software/fhir-react";
 import { FhirResource, Bundle } from "fhir/r4";
 import { useResourceInfo } from "../../hooks";
 import { ResourceTable } from "../ResourceTable";
-import { UIConfigResourceInterface } from "../../App";
-
-interface ResourceContentProps {
-    resourceType: string;
-    resourceConfig: UIConfigResourceInterface;
-    serverUrl: string;
-}
+import { ResourceContentProps } from "./interfaces";
 
 export function ResourceContent(props: ResourceContentProps) {
     const { resourceType, resourceConfig, serverUrl} = props;
