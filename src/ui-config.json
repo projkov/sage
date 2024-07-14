@@ -12,7 +12,7 @@
                     {
                         "key": "name",
                         "title": "Name",
-                        "expression": "Patient.name[0].text"
+                        "expression": "Patient.name[0].given"
                     },
                     {
                         "key": "birthDate",
@@ -36,7 +36,7 @@
                     {
                         "key": "name",
                         "title": "Name",
-                        "expression": "Patient.name[0].text"
+                        "expression": "Patient.name[0].given"
                     },
                     {
                         "key": "birthDate",
