@@ -1,6 +1,6 @@
 import './App.css';
 
-import { Layout, Tabs } from 'antd';
+import { Button, Layout, Tabs } from 'antd';
 
 import jsonData from './ui-config.json'
 import { ResourceContent } from './components/ResourceContent';
@@ -8,6 +8,7 @@ import { Content, Footer, Header } from 'antd/es/layout/layout';
 import Search from 'antd/es/input/Search';
 import { useState } from 'react';
 import logo from './assets/logo.png';
+import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 
 export interface UIConfigTableItemInterface {
   key: string;
@@ -57,15 +58,17 @@ function App() {
   };
 
   const footerStyle: React.CSSProperties = {
-    textAlign: 'center',
     color: '#fff',
     backgroundColor: '#4096ff',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   };
 
   return (
     <Layout style={layoutStyle}>
       <Header style={headerStyle}>
-        <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '8px' }}/>
+        <img src={logo} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '8px' }} />
         <Search
           placeholder="input search text"
           allowClear
@@ -88,7 +91,14 @@ function App() {
           />
         </div>
       </Content>
-      <Footer style={footerStyle}>Developed by Pavel Rozhkov</Footer>
+      <Footer style={footerStyle}>
+        <div style={{ alignContent: 'center' }}><b>Sage UI</b> is FHIR resource viewer</div>
+        <div style={{ alignContent: 'center' }}>Developed by <b>Pavel Rozhkov</b>, 2024</div>
+        <div style={{ display: 'flex', flexDirection: 'row', gap: '8px' }}>
+          <a href="https://github.com/projkov/sage" target='_blank' rel="noopener noreferrer"><GithubOutlined style={{ fontSize: '25px', color: '#FFF' }}/></a>
+          <a href="https://www.linkedin.com/in/pavelrozhkov" target='_blank' rel="noopener noreferrer"><LinkedinOutlined style={{ fontSize: '25px', color: '#FFF' }}/></a>
+        </div>
+      </Footer>
     </Layout>
 
   );
