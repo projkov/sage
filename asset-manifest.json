@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/sage/static/css/main.9b150056.css",
+    "main.js": "/sage/static/js/main.73b9c5c4.js",
+    "static/js/453.8dc98518.chunk.js": "/sage/static/js/453.8dc98518.chunk.js",
+    "static/media/logo.png": "/sage/static/media/logo.0be227e9c3f545052334.png",
+    "index.html": "/sage/index.html",
+    "main.9b150056.css.map": "/sage/static/css/main.9b150056.css.map",
+    "main.73b9c5c4.js.map": "/sage/static/js/main.73b9c5c4.js.map",
+    "453.8dc98518.chunk.js.map": "/sage/static/js/453.8dc98518.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b150056.css",
+    "static/js/main.73b9c5c4.js"
+  ]
+}
